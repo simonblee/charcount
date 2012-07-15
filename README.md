@@ -2,7 +2,7 @@ charcount
 =========
 
 Character counter for HTML input and textarea fields. The count is updated on the keyup event for 
-the element the plugin is attached to.
+the element the plugin is attached to. Requires jQuery 1.6 or higher.
 
 Usage
 =====
