@@ -10,7 +10,7 @@ Basic usage requires the input/textarea field to have a "maxlength" attribute se
 element with class "charcount" will be added after the input field and will display the current
 number of characters and the maximum like so: "count / max". Instantiate plugin like so:
     
-    $(element).characount();
+    $(element).charcount();
 
 An options object can be passed in during instatiation to customise. See the next section for 
 details.
