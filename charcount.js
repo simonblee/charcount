@@ -18,7 +18,7 @@
             
             // Create the counter if it is not provided
             if (! options.$counter) {
-                options.$counter = $(DEFAULT_COUNTER_MARKUP).appendTo($this);
+                options.$counter = $(DEFAULT_COUNTER_MARKUP).insertAfter($this);
             }
 
             // Bind the keyup event
