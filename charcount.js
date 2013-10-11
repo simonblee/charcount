@@ -3,19 +3,23 @@
     $.fn.charcount = function (options) {
 
         return this.each(function () {
-            var $counter,
+            var DEFAULT_COUNTER_MARKUP = '<span class="counter" />',
+                $counter,
                 $this = $(this);
 
             // Overwrite defaults
             defaults = {
                 template: '{count}/{max}',
                 max: $this.attr('maxlength'),
-                $element: null
+                $counter: null
             };
             options = $.extend({}, defaults, options);
             $this.attr('maxlength', options.max); // In-case not set, use browser maxchar limiter
-
-            $counter = options.$element;
+            
+            // Create the counter if it is not provided
+            if (! options.$counter) {
+                options.$counter = $(DEFAULT_COUNTER_MARKUP).appendTo($this);
+            }
 
             // Bind the keyup event
             $this.on('keyup.charcount', function () {
@@ -27,7 +31,7 @@
                 }
 
                 // Apply to template
-                $counter.text(
+                options.$counter.text(
                     options.template.replace('{count}', count)
                                     .replace('{max}', options.max)
                                     .replace('{remaining}', remaining)
