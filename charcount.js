@@ -3,7 +3,7 @@
     $.fn.charcount = function (options) {
 
         return this.each(function () {
-            var DEFAULT_COUNTER_MARKUP = '<span class="counter" />',
+            var DEFAULT_COUNTER_MARKUP = '<span class="charcount" />',
                 $counter,
                 $this = $(this);
 
